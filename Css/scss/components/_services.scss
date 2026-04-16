@@ -1,0 +1,27 @@
+@use "../abstracts/index" as *;
+
+#Services {
+  p {
+    color: black;
+  }
+  .content {
+    .item {
+      .box {
+        width: 90%;
+        margin: auto;
+        transition-duration: 0.5s;
+        &:hover {
+          background-color: #fff;
+          transform: translateY(-10px);
+          box-shadow: 0 20px 50px #00000080;
+        }
+        .image {
+          width: 80px;
+        }
+        .link {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

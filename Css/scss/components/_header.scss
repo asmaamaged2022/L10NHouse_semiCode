@@ -1,0 +1,123 @@
+@use "../abstracts/index" as *;
+header {
+  height: 100vh;
+  height: 100dvh;
+  position: relative;
+  .content {
+    height: 100%;
+    .part:nth-of-type(1) {
+      @include respond(350) {
+        transform: translateY(40px);
+      }
+      @include respond(450) {
+        transform: translateY(55px);
+      }
+      @include respond(650) {
+        transform: translateY(60px);
+      }
+      @include respond(850) {
+        transform: translateY(0px);
+      }
+      @include flex(start);
+      .box {
+        h2 {
+          font-size: 60px;
+          @include respond(350) {
+            font-size: 40px;
+          }
+        }
+        .link {
+          @include flex(start);
+          .icon {
+            cursor: pointer;
+            a {
+              @include distance(40px, 40px);
+              @include flex;
+              border-radius: 50%;
+              text-decoration: none;
+              overflow: hidden;
+              position: relative;
+              &::before {
+                @include createEle($h: 100%);
+                background-color: $firstColor;
+                transform: scale(0);
+                transition-duration: 0.5s;
+                border-radius: 50%;
+              }
+              &:hover {
+                &::before {
+                  transform: scale(1);
+                }
+                i {
+                  color: white;
+                }
+              }
+              i {
+                color: $firstColor;
+                transition-duration: 0.5s;
+                @include position;
+                z-index: 2;
+              }
+            }
+          }
+          p {
+            margin-left: 15px;
+            font-weight: bold;
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+    .part:nth-of-type(2) {
+      @include flex;
+      position: relative;
+      z-index: 3;
+      .image {
+        @include respond(350) {
+          width: 80%;
+        }
+        @include respond(450) {
+          width: 60%;
+        }
+        @include respond(850) {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .arrows {
+    @include position($b: 10%, $l: 50%);
+    z-index: 4;
+    transform: translateX(-50%);
+    width: 20px;
+    img {
+      width: 100%;
+      @include position($t: 0);
+      &:nth-of-type(1) {
+        animation-name: arrow1_Animate;
+        animation-duration: 2s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
+      &:nth-of-type(2) {
+        animation-name: arrow2_Animate;
+        animation-duration: 2s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
+      &:nth-of-type(3) {
+        animation-name: arrow3_Animate;
+        animation-duration: 2s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
+    }
+  }
+  .wave {
+    transform: rotate(180deg);
+    width: 100%;
+    @include position($b: 0, $l: 0);
+  }
+
+
+}

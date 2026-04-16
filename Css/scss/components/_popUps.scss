@@ -1,0 +1,204 @@
+@use "../abstracts/index" as *;
+
+.popUp[data-type="service"] {
+  @include position($type: fixed, $t: 0, $l: 0);
+  margin: 0px auto;
+  padding: 30px;
+  z-index: -1;
+  opacity: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition-duration: 0.5s;
+  overflow-y: auto;
+  .box {
+    .head {
+      position: relative;
+      i {
+        @include position($r: 30px);
+        font-size: 20px;
+        cursor: pointer;
+      }
+      border-bottom: 1px solid #777;
+    }
+    .body {
+      .header {
+        font-size: 30px;
+      }
+      .part {
+        .section {
+          ol {
+            li {
+              &::marker {
+                color: $secColor;
+                font-weight: bold;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.popUp[data-type="video"] {
+  @include position($type: fixed, $t: 0, $l: 0);
+  margin: 0px auto;
+  padding: 30px;
+  z-index: -1;
+  opacity: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition-duration: 0.5s;
+  overflow-y: auto;
+  @include flex;
+  .box {
+    height: 400px;
+    width: 50%;
+    @include respond(350) {
+      width: 100%;
+    }
+    @include respond(450) {
+      width: 95%;
+    }
+    @include respond(650) {
+      width: 85%;
+    }
+    @include respond(850) {
+      width: 75%;
+    }
+  }
+}
+.popUp[data-type="Sectors"] {
+  @include position($type: fixed, $t: 0, $l: 0);
+  margin: 0px auto;
+  padding: 30px;
+  z-index: -1;
+  opacity: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition-duration: 0.5s;
+  overflow-y: auto;
+  .box {
+    .head {
+      position: relative;
+      i {
+        @include position($r: 30px);
+        font-size: 20px;
+        cursor: pointer;
+      }
+      border-bottom: 1px solid #777;
+    }
+    .body {
+      .item {
+        background-color: #b9e4c1;
+        width: 90%;
+        height: 150px;
+        .icon {
+          width: 70px;
+        }
+        .name {
+          background-color: #e8e6e6;
+        }
+      }
+    }
+  }
+}
+.popUp[data-type="languages"] {
+  @include position($type: fixed, $t: 0, $l: 0);
+
+  z-index: -1;
+  opacity: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition-duration: 0.5s;
+  overflow-y: auto;
+  .box {
+    width: 600px;
+    @include respond(350) {
+      width: 300px;
+    }
+    @include respond(450) {
+      width: 400px;
+    }
+    @include respond(650) {
+      width: 500px;
+    }
+    @include respond(850) {
+      width: 600px;
+    }
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    .head {
+      position: relative;
+      i {
+        @include position($r: 30px);
+        font-size: 20px;
+        cursor: pointer;
+      }
+    }
+    .body {
+      .section.even {
+        h4 {
+          width: fit-content;
+          color: $firstColor;
+          &::after {
+            @include createEle(75%, 2px);
+            background-color: $firstColor;
+            transform: translateY(5px);
+          }
+        }
+        li {
+          i {
+            color: $firstColor;
+          }
+        }
+      }
+      .section.odd {
+        h4 {
+          width: fit-content;
+          color: $secColor;
+          &::after {
+            @include createEle(75%, 2px);
+            background-color: $secColor;
+            transform: translateY(5px);
+          }
+        }
+        li {
+          i {
+            color: $secColor;
+          }
+        }
+      }
+    }
+  }
+}
+.popup.lode {
+  @include flex;
+  @include position($type: fixed, $t: 0, $l: 0);
+  z-index: 200;
+
+  width: 100%;
+  img {
+    transform: scale(1);
+    transition-duration: 1s;
+  }
+  background: #ada996; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #eaeaea, #dbdbdb, #f2f2f2, #ada996); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #eaeaea, #dbdbdb, #f2f2f2, #ada996);
+  &.active {
+    img {
+      transform: scale(1.2);
+    }
+  }
+  &.hidden {
+    z-index: -1;
+    opacity: 0;
+  }
+}
+.popUp.show {
+  z-index: 200;
+  opacity: 1;
+}

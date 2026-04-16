@@ -1,0 +1,90 @@
+@use "../abstracts/index" as *;
+#Contact_Us {
+  @include background("../images/contact-bg.png");
+  position: relative;
+  &::before {
+    @include createEle($h: 100%);
+    @include position($t: 0, $l: 0);
+    background: radial-gradient(#68b703, #305d00);
+    opacity: 0.8;
+    z-index: 1;
+  }
+  .container {
+    position: relative;
+    z-index: 2;
+    .title {
+      h2 {
+        color: white;
+        &::after {
+          background-color: white;
+        }
+      }
+    }
+    .part {
+      .box {
+        height: 350px;
+        @include respond(350) {
+          height: 410px;
+        }
+        @include respond(1050) {
+          height: 350px;
+        }
+
+        form {
+          textarea {
+            resize: none;
+            height: 150px;
+          }
+          button {
+            background-color: $secColor;
+            color: white;
+            font-size: 20px;
+            padding: 5px 20px;
+          }
+        }
+      }
+      &:nth-of-type(2) {
+        .box {
+          .block {
+            @include flex($justify: start, $align: start);
+            .icon {
+              margin-right: 10px;
+              color: $secColor;
+            }
+            .details {
+              h6 {
+                font-weight: bold;
+              }
+            }
+          }
+          .links {
+            a {
+              i {
+                @include distance($w: 40px);
+
+                line-height: 40px;
+                color: white;
+                border-radius: 100%;
+              }
+              &:nth-of-type(1) {
+                i {
+                  background-color: #0045b5;
+                }
+              }
+              &:nth-of-type(2) {
+                i {
+                  background-color: #c52661;
+                }
+              }
+              &:nth-of-type(3) {
+                i {
+                  background-color: #f70000;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

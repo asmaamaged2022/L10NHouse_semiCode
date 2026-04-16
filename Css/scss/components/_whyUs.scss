@@ -1,0 +1,48 @@
+@use "../abstracts/index" as *;
+#Why_Us {
+  .content {
+    .item {
+      .layer {
+        background-color: $secColor;
+        height: 450px;
+        width: 320px;
+        @include respond(1050) {
+          width: 280px;
+        }
+        .box {
+          position: relative;
+          transition-duration: 0.5s;
+          @include flex($justify: end, $align: start, $d: column);
+          &::before {
+            @include createEle($h: 100%);
+            @include position($t: 0, $l: 0);
+            background: linear-gradient(0deg, #1e2022 0%, transparent 75%);
+          }
+          &:hover {
+            transform: translate(-10px, 10px);
+          }
+        }
+      }
+    }
+    .part {
+      &:nth-of-type(1) {
+        .box {
+          @include background("../images/best.jpg");
+        }
+      }
+      &:nth-of-type(2) {
+        .box {
+          @include background("../images/solutions.jpg");
+        }
+      }
+      &:nth-of-type(3) {
+        .box {
+          @include background("../images/teamwork.jpg");
+        }
+      }
+    }
+  }
+  p {
+    color: white;
+  }
+}

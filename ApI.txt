@@ -1,0 +1,7 @@
+https://semicode.tech/api/v1/l10nhouse/services
+
+https://semicode.tech/api/v1/l10nhouse/sectors
+
+https://semicode.tech/api/v1/l10nhouse/language
+
+sass --watch D:\SemiCode\L10nhouse\Css\scss\styles.scss:D:\SemiCode\L10nhouse\Css\styles.css

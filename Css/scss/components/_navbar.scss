@@ -1,0 +1,87 @@
+@use "../abstracts/index" as *;
+
+nav {
+  z-index: 100;
+  transition-duration: 0.5s;
+  .navbar-toggler {
+    &:focus {
+      outline: 0;
+      box-shadow: initial;
+    }
+  }
+  .navbar-collapse {
+    @include respond(350) {
+      background-color: white;
+      border-radius: 20px;
+    }
+    @include respond(1050) {
+      background-color: transparent;
+    }
+  }
+  .navbar-brand {
+    transition-duration: 0.5s;
+    width: 10%;
+    @include respond(350) {
+      width: 30%;
+    }
+    @include respond(450) {
+      width: 25%;
+    }
+    @include respond(850) {
+      width: 15%;
+    }
+  }
+  .navbar-nav {
+    .nav-item {
+      &:not(:last-child) {
+        margin-right: 20px;
+        @include respond(350) {
+          margin-right: 0px;
+          margin-bottom: 15px;
+        }
+        @include respond(850) {
+          margin-right: 15px;
+        }
+      }
+      .nav-link {
+        color: $firstColor;
+        font-weight: bold;
+        position: relative;
+        padding-inline: 0;
+        width: fit-content;
+        @include respond(350) {
+          margin: auto;
+        }
+
+        &::before {
+          @include createEle($h: 2px);
+          background-color: $secColor;
+          @include position($b: 0, $l: 0);
+          transform: scale(0);
+          transition-duration: 0.5s;
+        }
+        &:hover,
+        &.active {
+          &::before {
+            transform: scale(1);
+          }
+        }
+      }
+    }
+  }
+  &.scrolled {
+    background-color: rgba(255, 255, 255, 0.5);
+    .navbar-brand {
+      width: 8%;
+      @include respond(350) {
+        width: 25%;
+      }
+      @include respond(450) {
+        width: 20%;
+      }
+      @include respond(850) {
+        width: 12%;
+      }
+    }
+  }
+}

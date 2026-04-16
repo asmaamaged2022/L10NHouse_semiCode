@@ -1,0 +1,28 @@
+@use "../abstracts/index" as *;
+.owl-theme {
+  .item {
+    width: 90%;
+    margin: auto;
+    @include flex();
+  }
+
+  .owl-nav {
+    display: none;
+  }
+  .owl-dots {
+    margin-block: 20px;
+    .owl-dot {
+      span {
+        background-color: $secColor;
+        opacity: 0.5;
+      }
+
+      &.active {
+        span {
+          background-color: $secColor;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

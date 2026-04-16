@@ -1,0 +1,51 @@
+@keyframes arrow1_Animate {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes arrow2_Animate {
+  0% {
+    opacity: 0;
+    top: 0px;
+  }
+  50% {
+    opacity: 1;
+    top: 15px;
+  }
+  100% {
+    opacity: 0;
+    top: 15px;
+  }
+}
+@keyframes arrow3_Animate {
+  0% {
+    opacity: 0;
+    top: 0px;
+  }
+  50% {
+    opacity: 1;
+    top: 30px;
+  }
+  100% {
+    opacity: 0;
+    top: 30px;
+  }
+}
+@keyframes moveWave {
+
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-20%);
+    }
+
+}
+
