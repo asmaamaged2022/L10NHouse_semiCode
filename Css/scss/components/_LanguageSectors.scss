@@ -22,7 +22,6 @@
         }
       }
     }
-
     span {
       display: inline-block;
       padding: 15px 20px;
@@ -30,9 +29,12 @@
       color: $secColor;
       border-radius: 20px;
       font-weight: bold;
-      cursor: pointer;
+
       transition-duration: 0.5s;
-      &:hover {
+    }
+    cursor: pointer;
+    &:hover {
+      span {
         transform: translateY(-15px);
       }
     }
