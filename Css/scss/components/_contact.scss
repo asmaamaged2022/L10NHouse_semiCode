@@ -22,14 +22,7 @@
     }
     .part {
       .box {
-        height: 350px;
-        @include respond(350) {
-          height: 410px;
-        }
-        @include respond(1050) {
-          height: 350px;
-        }
-
+        height: 100%;
         form {
           textarea {
             resize: none;

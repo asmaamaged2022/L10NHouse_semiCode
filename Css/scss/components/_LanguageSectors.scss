@@ -29,14 +29,11 @@
       color: $secColor;
       border-radius: 20px;
       font-weight: bold;
-
-      transition-duration: 0.5s;
-    }
-    cursor: pointer;
-    &:hover {
-      span {
+      cursor: pointer;
+      &:hover {
         transform: translateY(-15px);
       }
+      transition-duration: 0.5s;
     }
   }
 }

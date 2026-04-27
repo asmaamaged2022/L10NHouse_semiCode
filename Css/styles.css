@@ -779,10 +779,12 @@ nav.scrolled .navbar-brand {
   border-radius: 20px;
   font-weight: bold;
   cursor: pointer;
-  transition-duration: 0.5s;
 }
 #Language_Sectors .container span:hover {
   transform: translateY(-15px);
+}
+#Language_Sectors .container span {
+  transition-duration: 0.5s;
 }
 
 .owl-theme .item {
@@ -840,17 +842,7 @@ nav.scrolled .navbar-brand {
   background-color: white;
 }
 #Contact_Us .container .part .box {
-  height: 350px;
-}
-@media (max-width: 1300px) {
-  #Contact_Us .container .part .box {
-    height: 410px;
-  }
-}
-@media (min-width: 992px) and (max-width: 1300px) {
-  #Contact_Us .container .part .box {
-    height: 350px;
-  }
+  height: 100%;
 }
 #Contact_Us .container .part .box form textarea {
   resize: none;
